@@ -4,95 +4,104 @@ public class Heart {
     private int size;
     private String saying;
     private int calories;
-    private int costPerLb;
+    private double costPerLb;
     private boolean available;
     private int stock;
 
     // CONSTRUCTORS
     public Heart() {
-        this.color= "";
-        this.size=0;
-        this.saying="";
+        this.color = "";
+        this.size = 0;
+        this.saying = "";
         this.setCalories(0);
         this.setCostPerLb(0);
         this.setAvailable(false);
         this.setStock(0);
     }
 
-    //Override Constructors
-    public Heart (String color, int size, String saying, int calories, Boolean available, int stock){
-        this.color= color;
-        this.size= size;
-        this.saying= saying;
+    // Override Constructors
+    public Heart(String color, int size, String saying, double costPerLb, int calories, Boolean available, int stock) {
+        this.color = color;
+        this.size = size;
+        this.saying = saying;
         this.setCalories(calories);
         this.setAvailable(available);
         this.setStock(stock);
     }
 
-
     // ACCESSORS
     public String getColor() {
         return this.color;
     }
-    public int getSize(){
+
+    public int getSize() {
         return this.size;
     }
-    public String getSaying(){
+
+    public String getSaying() {
         return this.saying;
     }
+
     public int getCalories() {
         return calories;
     }
-    public int getCostPerLb() {
+
+    public double getCostPerLb() {
         return costPerLb;
     }
+
     public boolean isAvailable() {
         return available;
     }
+
     public int getStock() {
         return stock;
     }
-    
-
-
 
     // MUTATORS
     public void setColor(String color) {
         this.color = color;
     }
-    public void setSize (int size){
-        this.size= size;
+
+    public void setSize(int size) {
+        this.size = size;
     }
-    public void setSaying (String saying){
-        this.saying= saying;
+
+    public void setSaying(String saying) {
+        this.saying = saying;
     }
-    public void setCalories (int calories){
-        this.calories=calories;
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
-    public void setCostPerLb(int costPerLb) {
+
+    public void setCostPerLb(double costPerLb) {
         this.costPerLb = costPerLb;
     }
+
     public void setAvailable(boolean available) {
         this.available = available;
     }
+
     public void setStock(int stock) {
         this.stock = stock;
     }
-    public void adjPrice(int costPerLb, int percent){
-        this.costPerLb= (costPerLb* percent / 100);
+
+    public void adjPrice(int costPerLb, int percent) {
+        this.costPerLb = (costPerLb * percent / 100);
     }
-    public boolean inStock (int stock, int want){
-        boolean inStock= false;
-        if(stock>=want)
-            inStock= true;
+
+    public boolean inStock(int stock, int want) {
+        boolean inStock = false;
+        if (stock >= want)
+            inStock = true;
         return inStock;
     }
-    
-
 
     // METHODS
     public String report() {
-        return this.color + "\n"; // Add other properties here as you add them to the class
+        return this.color + " " + this.size + " " + this.saying + " " + this.costPerLb + " " + this.stock + " ";
     }
-    //Write other methods here (if needed)...
+
+    
 }
