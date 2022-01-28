@@ -13,20 +13,21 @@ public class Heart {
         this.color = "";
         this.size = 0;
         this.saying = "";
-        this.setCalories(0);
-        this.setCostPerLb(0);
-        this.setAvailable(false);
-        this.setStock(0);
+        this.calories=0;
+        this.costPerLb=0;
+        this.available=false;
+        this.stock=0;
     }
 
     // Override Constructors
-    public Heart(String color, int size, String saying, double costPerLb, int calories, Boolean available, int stock) {
+    public Heart(String color, int size, String saying, double costPerLb, int calories, int stock) {
         this.color = color;
         this.size = size;
         this.saying = saying;
-        this.setCalories(calories);
-        this.setAvailable(available);
-        this.setStock(stock);
+        this.costPerLb= costPerLb;
+        this.calories=calories;
+        this.available= stock!=0;
+        this.stock=stock;
     }
 
     // ACCESSORS
@@ -86,10 +87,10 @@ public class Heart {
     public void setStock(int stock) {
         this.stock = stock;
     }
-
-    public void adjPrice(int costPerLb, int percent) {
-        this.costPerLb = (costPerLb * percent / 100);
+    public void adjPrice(int adj){
+        this.costPerLb=(getCostPerLb() *(adj+100) /100);
     }
+
 
     public boolean inStock(int stock, int want) {
         boolean inStock = false;
