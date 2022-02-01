@@ -20,7 +20,13 @@ public class HeartsClient {
         }
         return x;
     }
-    public static 
+    public static double colorPrice(String colorRequest, Heart[] store){
+        for(int i=0; i<store.length; i++){
+           if ((store[i].getColor() = colorRequest.toLowerCase()){
+
+           }
+        }
+    }
    
     
 }
