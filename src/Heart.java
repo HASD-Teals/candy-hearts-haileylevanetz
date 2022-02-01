@@ -90,6 +90,11 @@ public class Heart {
     public void adjPrice(int adj){
         this.costPerLb=(getCostPerLb() *(adj+100) /100);
     }
+    public void adjStock(int adj){
+        if(adj>0){
+            this.stock= adj;
+        }
+    }
 
 
     public boolean inStock(int stock, int want) {
