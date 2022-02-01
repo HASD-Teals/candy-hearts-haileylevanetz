@@ -8,11 +8,19 @@ public class HeartsClient {
         Heart[] store= {group1, group2, group3};
         group3.adjPrice(50);
         System.out.print(group3.report());
-        System.out.print("\u0003" + "\u0004");
+
         
         //banana(group1, group2, group3);
     
 }
+    public static int buyOut (Heart[] store){
+        int x=0;
+        for(int i=0; i<store.length; i++){
+            x= x+ store[i].getStock();
+        }
+        return x;
+    }
+    public static 
    
     
 }
