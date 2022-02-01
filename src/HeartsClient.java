@@ -7,7 +7,8 @@ public class HeartsClient {
         Heart group3= new Heart("green", 2, "Go Girl!", 3.5, 0, 75);
         Heart[] store= {group1, group2, group3};
         group3.adjPrice(50);
-        System.out.print(group3.report());
+        System.out.println(group3.report());
+        System.out.print(colorPrice("red", store));
 
         
         //banana(group1, group2, group3);
@@ -21,11 +22,13 @@ public class HeartsClient {
         return x;
     }
     public static double colorPrice(String colorRequest, Heart[] store){
+        double colorPrice=0.0;
         for(int i=0; i<store.length; i++){
-           if ((store[i].getColor() = colorRequest.toLowerCase()){
-
+           if ((store[i].getColor().toLowerCase()) == colorRequest.toLowerCase()){
+            colorPrice= colorPrice +(store[i].getCostPerLb() * store[i].getStock());
            }
         }
+        return colorPrice;
     }
    
     
